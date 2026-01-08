@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gamja Flower', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #6B3F2B;
+
+  background-color: #fff; 
+  background-image:
+    linear-gradient(#eee .1em, transparent .1em),
+    linear-gradient(90deg, #eee .1em, transparent .1em);
+  background-size: 100% 70px, 70px 100%;
+  background-attachment: fixed; /* fondo fijo al hacer scroll */
+}
+
+
+.indtext {
+  font-family: 'Gamja Flower';
+  font-size: 1rem;
+  opacity: 1;
+  position: absolute;
+  bottom: 35px; /* Distancia desde el fondo de la card */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar horizontalmente */
+}
+
+/* si el fondo es color-0 */
+.section-content.color-0 .indtext {
+  color: #0063a9; /* rojo, por ejemplo */
+}
+
+/* si el fondo es color-1 */
+.section-content.color-1 .indtext {
+  color: #009999;
+}
+
+/* si el fondo es color-2 */
+.section-content.color-2 .indtext {
+  color: #ebc242;
+}
+
+/* si el fondo es color-3 */
+.section-content.color-3 .indtext {
+  color: #cc6666;
+}
+
+.section-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section-content {
+  width: 90%;
+  max-width: 900px;
+  height: 80vh;
+  border-radius: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform-origin: center;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.section-inner {
+  text-align: center;
+  padding: 48px;
+  padding-top: 80px;
+}
+
+.section-content.color-0 {
+  background-color: rgb(202, 230, 246);
+}
+
+.section-content.color-1 {
+  background-color: rgb(193, 221, 221);
+}
+
+.section-content.color-2 {
+  background-color: rgba(245, 236, 210);
+}
+
+.section-content.color-3 {
+  background-color: rgba(245, 208, 208);
+}
+
+.bird-image {
+  width: 256px;
+  height: 256px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.num-image {
+  width: 350px;
+  height: 350px;
+  margin: 20px auto 24px;
+  display: block;
+  object-fit: contain; /* o cover si lo prefieres */
+}
+
+
+  .section-inner {
+    padding: 24px;
+    padding-top: 60px;
+  }
+.interactive-image {
+  width: 350px;
+  height: 350px;
+  margin: 20px auto 24px;
+  display: block;
+}
+
+.interactive-video {
+  width: 650px;
+  height: 650px;
+  margin: -150px auto 0 ;
+  display: block;
+}
+
+h2 {
+  font-size: 3.75rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.section-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 0 !important;
+}
+
+.drag-image {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 150px;
+  height: 150px;
+  cursor: grab;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.drag-image:active {
+  cursor: grabbing;
+}
+
+.drop-zone {
+  transition: border 0.2s;
+}
+
+.overlay-rotatable {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  cursor: grab;
+  z-index: 15;
+  pointer-events: auto;
+}
+
+.overlay-rotatable:active {
+  cursor: grabbing;
+}
+.random-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.random-layer-final {
+  z-index: 50;
+}
+
+.section-12-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-12-left,
+.section-12-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-12-right .bottom-image {
+  width: 180px;
+  height: 180px;
+  margin: 8px 0;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clickable-image:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .section-12-wrapper {
+    flex-direction: column;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+}
